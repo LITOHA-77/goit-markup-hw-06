@@ -441,10 +441,14 @@ img {
   border: 2px solid;
   border-radius: 2px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .check-icon-box:focus + .checkbox-icon {
   border: 2px solid var(--accent-color);
+}
+.check-icon-box:checked:focus + .checkbox-icon {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 .check-icon-box:checked + .checkbox-icon {
   border: none;
