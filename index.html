@@ -51,8 +51,53 @@
                         <p></p>
                         <button type="button" class="button-modal-close list list-border" data-modal-close>
                             <svg class="close-icon" width="11" height="11">
-                            <use href="./images/icons.svg#close"></use>
-                        </svg></button>
+                                <use href="./images/icons.svg#close"></use>
+                            </svg>
+                        </button>
+                        <div class="form-box">
+                            <form class="form-modal">
+                                <p class="modal-title">Оставьте свои данные, мы вам перезвоним</p>
+                                <label class="form-field">
+                                    <span class="form-label">Имя</span>
+                                    <input type="name" class="form-input" name="name">
+                                    <svg class="form-icon" width="18" height="18">
+                                        <use href="./images/icons.svg#person-form"></use>
+                                    </svg>
+                                </label>
+                                <label class="form-field">
+                                    <span class="form-label">Телефон</span>
+                                    <input type="tel" class="form-input" name="tel">
+                                    <svg class="form-icon" width="18" height="18">
+                                        <use href="./images/icons.svg#phone-form"></use>
+                                    </svg>
+                                </label>
+                                <label class="form-field">
+                                    <span class="form-label">Почта</span>
+                                    <input type="email" class="form-input" name="email" required>
+                                    <svg class="form-icon" width="18" height="18">
+                                        <use href="./images/icons.svg#email-form"></use>
+                                    </svg>
+                                </label>
+                                <label class="form-field area">
+                                    <span class="form-label">Комментарий</span>
+                                    <textarea name="user-text" class="form-input area"
+                                        placeholder="Введите текст"></textarea>
+                                </label>
+                                <form>
+
+                                    <label class="checkbox-modal">
+                                        <input type="checkbox" class="check-icon-box visually-hidden" name="check"
+                                            value="i-agree" checked />
+                                        <svg class="checkbox-icon" width="16" height="15">
+                                            <use href="./images/icons.svg#icon-check"></use>
+                                        </svg>
+                                        <p class="checkbox-text">Соглашаюсь с рассылкой и принимаю</p>
+                                        <a href="" aria-label="Условия договора" class="check-box-agreement list"
+                                            target="_blank" rel="noopener noreferrer">Условия договора</a>
+                                    </label>
+                                    <button type="submit" class="button-send">Отправить</button>
+                                </form>
+                        </div>
                     </div>
                 </div>
 
@@ -110,16 +155,18 @@
             <div class="container">
                 <h2 class="section-title">Чем мы занимаемся</h2>
                 <ul class="section-foto list">
-                        <li class="item foto-thumb"><img src="./images/box1.jpg" alt="Сотрудник пишет код." width="370">
-                            <p class="foto-thumb-text">Десктопные приложения</p>
-                        </li>
-                        <li class="item foto-thumb"><img src="./images/box2.jpg" alt="Сотрудник настраивает стили." width="370">
-                            <p class="foto-thumb-text">Мобильные приложения</p>
-                        </li>
-                        <li class="item foto-thumb"><img src="./images/box3.jpg" alt="Сотрудник настраивает цветовую палитру." width="370">
-                            <p class="foto-thumb-text">Дизайнерские решения</p>
-                        </li>
-                    
+                    <li class="item foto-thumb"><img src="./images/box1.jpg" alt="Сотрудник пишет код." width="370">
+                        <p class="foto-thumb-text">Десктопные приложения</p>
+                    </li>
+                    <li class="item foto-thumb"><img src="./images/box2.jpg" alt="Сотрудник настраивает стили."
+                            width="370">
+                        <p class="foto-thumb-text">Мобильные приложения</p>
+                    </li>
+                    <li class="item foto-thumb"><img src="./images/box3.jpg"
+                            alt="Сотрудник настраивает цветовую палитру." width="370">
+                        <p class="foto-thumb-text">Дизайнерские решения</p>
+                    </li>
+
                 </ul>
             </div>
         </section>
@@ -363,8 +410,8 @@
                                     г. Киев, пр-т Леси Украинки, 26</a></li>
                             <li><a href="mailto:info@devstudio.com" aria-label="Почта"
                                     class="address-contacts list">info@devstudio.com</a></li>
-                            <li><a href="tel:+380961111111" aria-label="Телефон"
-                                    class="address-contacts list">+38 096 111 11 11</a></li>
+                            <li><a href="tel:+380961111111" aria-label="Телефон" class="address-contacts list">+38 096
+                                    111 11 11</a></li>
                         </ul>
                     </address>
                 </div>
@@ -404,6 +451,18 @@
                             </a>
                         </li>
                     </ul>
+                </div>
+                <div class="subscribe-box">
+                    <p class="go-us">Подпишитесь на рассылку</p>
+                    <form class="mail-field-box">
+                        <label class="mail-field"><input class="mail-field-item" type="email" name="email"
+                                placeholder="Email"></label>
+                        <button type="submit" class="button-subscribe">Подписаться
+                            <svg class="subscribe-icon" width="24" height="24">
+                                <use href="./images/icons.svg#icon_send"></use>
+                            </svg>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>

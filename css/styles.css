@@ -265,12 +265,18 @@ img {
   margin-left: auto;
   margin-bottom: 30px;
 }
-.button-hero:hover,
-.button-hero:focus {
+.button-hero,
+.button-subscribe,
+.button-send:hover,
+.button-hero,
+.button-subscribe,
+.button-send:focus {
   background-color: #188ce8;
 }
-.button-hero {
-  display: inline-block;
+.button-hero,
+.button-subscribe,
+.button-send {
+  display: inline-flex;
   padding: 10px 32px;
   min-width: 200px;
   color: var(--primary-white-color);
@@ -285,6 +291,44 @@ img {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.button-subscribe {
+  align-items: center;
+  text-align: center;
+  padding-left: 29px;
+  padding-right: 28px;
+}
+.button-send {
+  align-items: center;
+  text-align: center;
+  padding-left: 56px;
+  padding-right: 55px;
+  width: 200px;
+}
+.subscribe-icon {
+  margin-left: 10px;
+  fill: currentColor;
+}
+.button-modal-close {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: var(--primary-white-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.button-modal-close:hover .close-icon,
+.button-modal-close:focus .close-icon {
+  fill: var(--accent-color);
+}
+.close-icon {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  fill: #000000;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* modal js */
 .backdrop.is-hidden {
@@ -318,22 +362,102 @@ img {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
-.button-modal-close {
+.form-modal {
   position: absolute;
-  right: 8px;
-  top: 8px;
-  width: 30px;
-  height: 30px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background: var(--primary-white-color);
-  border-radius: 50%;
+  top: 40px;
+  left: 40px;
+  width: 448px;
+}
+.modal-title {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+}
+.form-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 10px;
+}
+.form-field.area {
+  margin-bottom: 0;
+}
+.form-input {
+  width: 100%;
+  margin: 0;
+  padding: 11px 12px 11px 42px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
   cursor: pointer;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.close-icon {
+.form-input:hover {
+  border-color: var(--accent-color);
+}
+.form-input.area {
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  height: 120px;
+  resize: none;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+}
+.form-label {
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: var(--text-color);
+}
+/* textarea::-webkit-input-placeholder {
+  color: rgba(117, 117, 117, 0.5); 
+} */
+.form-input.area::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+.form-input:hover + .form-icon,
+.form-input:focus + .form-icon {
+  fill: var(--accent-color);
+}
+.form-icon {
   position: absolute;
-  transform: translate(-50%, -50%);
-  fill: #000000;
+  top: 50%;
+  left: 12px;
+  fill: var(--text-title-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.checkbox-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.checkbox-icon {
+  border: 2px solid;
+  border-radius: 2px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.check-icon-box:checked + .checkbox-icon {
+  border: none;
+  background-color: var(--accent-color);
+}
+.check-box-agreement {
+  margin-left: 3px;
+  text-decoration-line: underline;
+  fill: var(--primary-white-color);
+  color: var(--accent-color);
+}
+.checkbox-text {
+  margin: 0;
+  margin-left: 7px;
+  color: var(--text-color);
+}
+
 /* section Чем мы занимаемся описани */
 .fotos {
   padding-top: 0;
@@ -527,20 +651,37 @@ img {
 }
 .footerbox {
   display: flex;
+  justify-content: space-between;
   align-items: baseline;
 }
 .logo-end {
   margin-bottom: 20px;
 }
 .address-block {
-  width: 231px;
+  flex-basis: calc((50% - 45px) / 2);
 }
 .social-network-link {
-  display: inline-block;
-  widows: 206px;
-  margin-left: 70px;
+  flex-basis: calc((50% - 45px) / 2);
 }
-/* думал через strong но сильно меняется жирность */
+.subscribe-box {
+  flex-basis: calc(50% - 15px);
+}
+.mail-field-box {
+  display: flex;
+}
+.mail-field {
+  margin-right: 12px;
+}
+.mail-field-item {
+  width: 358px;
+  padding: 15px 16px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  background-color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+}
 .go-us {
   font-weight: 700;
   font-size: 14px;
