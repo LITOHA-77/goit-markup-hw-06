@@ -437,6 +437,7 @@ img {
   margin-bottom: 30px;
 }
 .checkbox-icon {
+  fill: none;
   border: 2px solid;
   border-radius: 2px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -444,12 +445,12 @@ img {
 }
 .check-icon-box:checked + .checkbox-icon {
   border: none;
+  fill: var(--primary-white-color);
   background-color: var(--accent-color);
 }
 .check-box-agreement {
   margin-left: 3px;
   text-decoration-line: underline;
-  fill: var(--primary-white-color);
   color: var(--accent-color);
 }
 .checkbox-text {
