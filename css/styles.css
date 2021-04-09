@@ -265,12 +265,16 @@ img {
   margin-left: auto;
   margin-bottom: 30px;
 }
-.button-hero,
-.button-subscribe,
+.button-subscribe:hover,
+.button-subscribe:focus {
+  background-color: #188ce8;
+}
 .button-send:hover,
-.button-hero,
-.button-subscribe,
 .button-send:focus {
+  background-color: #188ce8;
+}
+.button-hero:hover,
+.button-hero:focus {
   background-color: #188ce8;
 }
 .button-hero,
@@ -303,7 +307,6 @@ img {
   text-align: center;
   padding-left: 56px;
   padding-right: 55px;
-  width: 200px;
 }
 .subscribe-icon {
   margin-left: 10px;
